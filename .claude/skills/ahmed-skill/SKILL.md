@@ -33,6 +33,86 @@ If no mode is supplied, ask the user to choose one: `init`, `design`, `feature`,
 - Review the final diff and report changed files, checks run, assumptions, limitations, and manual steps.
 - Ask before destructive, production-impacting, financial, billing, deployment, access-control, secret, migration, or breaking actions.
 
+## Ahmad Skills Repository Integration
+
+The shared skills repository is the source of Ahmad's reusable engineering standards, templates, technology guidance, and personal project preferences.
+
+Repository:
+
+- `https://github.com/AhmadALSaffan/AHMED-SKILLS`
+
+Before planning or implementing work, inspect and load the relevant files from this repository when they are available locally or in the current project.
+
+### Always Read
+
+- `CLAUDE_GLOBAL_PROFILE.md`
+- `rules/00-ai-operating-rules.md`
+- `rules/02-code-quality.md`
+- `rules/08-testing-strategy.md`
+- `rules/14-security.md`
+- `rules/23-documentation.md`
+
+### Read When Relevant
+
+- Android or Kotlin work:
+  - `skills/android/kotlin.md`
+  - `skills/android/jetpack-compose.md`
+  - `skills/android/android-architecture.md`
+  - `skills/android/android-testing.md`
+  - `skills/android/android-release.md`
+
+- Web or frontend work:
+  - `skills/web/frontend.md`
+  - `skills/web/backend-api.md`
+  - `skills/web/nextjs-react.md`
+  - `skills/web/web-deployment.md`
+
+- AI coding agent work:
+  - `skills/ai/claude-code-workflow.md`
+  - `skills/ai/codex-workflow.md`
+  - `skills/ai/ai-agent-tasking.md`
+
+- Cloud, Docker, GitHub Actions, or deployment work:
+  - `skills/cloud/docker.md`
+  - `skills/cloud/github-actions.md`
+  - `skills/cloud/deployment.md`
+
+- Product, landing-page, or release-planning work:
+  - `skills/product/project-planning.md`
+  - `skills/product/landing-page.md`
+  - `skills/product/app-release.md`
+
+### Templates To Use
+
+Use the relevant template from `templates/` instead of inventing a structure from scratch:
+
+- `templates/project-context-template.md` for new-project context and `CLAUDE.md`.
+- `templates/feature-spec-template.md` before planning a feature.
+- `templates/bug-fix-template.md` when investigating or fixing a bug.
+- `templates/ai-task-prompt-template.md` when preparing work for an AI coding agent.
+- `templates/pull-request-template.md` when preparing a pull request.
+- `templates/adr-template.md` for significant architecture decisions.
+- `templates/readme-template.md` when creating or updating a README.
+
+### Rule Priority
+
+Apply instructions in this order:
+
+1. Explicit user request.
+2. Safety, security, privacy, and irreversible-action restrictions.
+3. Current project's `CLAUDE.md`, `.claude/` instructions, and repository conventions.
+4. Relevant instructions from `AHMED-SKILLS`.
+5. General default practices.
+
+When instructions conflict, explain the conflict briefly and ask before choosing a direction if it affects architecture, security, behavior, cost, deployment, or compatibility.
+
+### File Availability
+
+- If `AHMED-SKILLS` exists locally, read files directly from the local repository.
+- If the relevant rules are already copied into the current project's `.claude/` directory, use the local project copies.
+- If the repository cannot be accessed locally, use the current project instructions and ask Ahmad for the preferred file path or permission to fetch the shared repository.
+- Never claim to have read a file that is not available in the current environment.
+
 ## Init Mode
 
 When invoked as `/ahmed-skill init`:
