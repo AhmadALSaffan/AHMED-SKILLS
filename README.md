@@ -1,4 +1,4 @@
-# Ahmad Skills
+# Ahmed Skills
 
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Custom%20Skills-5A4FCF?style=for-the-badge)](https://docs.anthropic.com/en/docs/claude-code)
 [![AI Engineering](https://img.shields.io/badge/AI-Engineering%20Rulebook-111827?style=for-the-badge)](#هيكل-المستودع)
