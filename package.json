@@ -1,0 +1,19 @@
+{
+  "name": "ahmed-skills",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Install Ahmad's Claude Code skills, engineering rules, templates, and profiles.",
+  "type": "module",
+  "bin": {
+    "ahmed-skills": "bin/ahmed-skills.js"
+  },
+  "scripts": {
+    "install:global": "node bin/ahmed-skills.js install --global",
+    "install:project": "node bin/ahmed-skills.js install --project",
+    "status": "node bin/ahmed-skills.js status"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}
