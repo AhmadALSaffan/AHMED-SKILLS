@@ -1,530 +1,323 @@
-# Ahmad's Claude Code Setup
+# Ahmad Skills
 
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Global%20Instructions-5A4FCF?style=for-the-badge)](https://docs.anthropic.com/en/docs/claude-code)
-[![Android](https://img.shields.io/badge/Android-Kotlin-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
-[![Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture-111827?style=for-the-badge)](#-المعمارية)
-[![Pattern](https://img.shields.io/badge/Pattern-MVVM-2563EB?style=for-the-badge)](#-المعمارية)
-[![Firebase](https://img.shields.io/badge/Backend-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=111827)](https://firebase.google.com/)
-[![No Emoji](https://img.shields.io/badge/Emoji-Disabled-red?style=for-the-badge)](#-قواعد-التواصل)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Custom%20Skills-5A4FCF?style=for-the-badge)](https://docs.anthropic.com/en/docs/claude-code)
+[![AI Engineering](https://img.shields.io/badge/AI-Engineering%20Rulebook-111827?style=for-the-badge)](#هيكل-المستودع)
+[![Android](https://img.shields.io/badge/Android-Kotlin%20%2B%20Compose-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
+[![Web](https://img.shields.io/badge/Web-Frontend%20%2B%20Backend-2563EB?style=for-the-badge)](#المهارات)
+[![No Emoji](https://img.shields.io/badge/Emoji-Disabled-red?style=for-the-badge)](#قواعد-التواصل)
 
-## ما هو هذا المشروع؟
+نظام شخصي قابل لإعادة الاستخدام للعمل مع **Claude Code** ووكلاء البرمجة بالذكاء الاصطناعي.
 
-هذا المستودع يحتوي على إعداد شخصي لاستخدام **Claude Code** كمساعد برمجي ثابت مع جميع المشاريع.
+يحتوي هذا المستودع على ملف Ahmad الشخصي العام، وقوالب المشاريع، وقواعد الهندسة البرمجية، والمهارات الخاصة بالتقنيات المختلفة، وأمر Claude Code المخصص `/ahmed-skill`. الهدف هو جعل العمل بالـ AI متسقًا في مشاريع Android والويب والـ backend والـ cloud والـ desktop والمنتجات الرقمية.
 
-الفكرة ليست كتابة Prompt جديد في كل مرة تبدأ فيها مشروعاً. بدلاً من ذلك، يوجد ملف عالمي يعرّف Claude بأسلوب العمل والقواعد التقنية والتصميمية الخاصة بك، بالإضافة إلى قالب خاص بكل مشروع يضيف معلومات المشروع نفسه.
+الهدف ليس توليد كود بسرعة بأي ثمن، بل بناء برمجيات مفهومة، قابلة للصيانة، مختبرة، آمنة، مركزة على المنتج، وسهلة التحسين لاحقًا.
 
-النظام مبني على مستويين:
+## التثبيت السريع
 
-```text
-Global Profile
-    ↓
-القواعد الشخصية والثابتة لجميع المشاريع
+ثبّت النظام كاملًا بأمر واحد:
 
-Project Template
-    ↓
-معلومات وقواعد المشروع الحالي
+```bash
+npx github:AhmadALSaffan/AHMED-SKILLS install
 ```
 
----
-
-## الملفات
-
-| الملف | وظيفته | مكان استخدامه |
-|---|---|---|
-| `CLAUDE_GLOBAL_PROFILE.md` | التعليمات الشخصية والعامة | `~/.claude/CLAUDE.md` |
-| `CLAUDE_PROJECT_TEMPLATE.md` | قالب معلومات المشروع | داخل كل مشروع باسم `CLAUDE.md` |
-
-### 1. `CLAUDE_GLOBAL_PROFILE.md`
-
-هذا هو الملف الأهم. يحتوي على القواعد التي تريدها في **كل مشروع**، مثل أسلوب البرمجة، المعمارية، التصميم، Git، Firebase، الاختبارات، وطريقة تعامل Claude معك.
-
-بعد وضعه في مجلد Claude الشخصي، لا تحتاج إلى نسخه داخل كل مشروع.
-
-المسار على Windows:
+سيظهر لك خيار مكان التثبيت:
 
 ```text
-C:\Users\AHMED AL SAFFAN\.claude\CLAUDE.md
+1) Global  - متاح في جميع مشاريع Claude Code
+2) Project - متاح في المشروع الحالي فقط
 ```
 
-> انتبه: الاسم يجب أن يكون `CLAUDE.md` وليس `CLAUDE.md.md`.
+يمكنك تحديد نوع التثبيت مباشرة:
 
----
+```bash
+# تثبيت النظام لكل مشاريع Claude Code على هذا الكمبيوتر
+npx github:AhmadALSaffan/AHMED-SKILLS install --global
 
-### 2. `CLAUDE_PROJECT_TEMPLATE.md`
+# تثبيت النظام داخل مجلد المشروع الحالي فقط
+npx github:AhmadALSaffan/AHMED-SKILLS install --project
 
-هذا قالب لكل مشروع جديد.
+# استبدال النسخة المثبتة مسبقًا
+npx github:AhmadALSaffan/AHMED-SKILLS install --global --force
 
-تنسخه داخل المشروع وتعيد تسميته إلى:
+# فحص حالة التثبيت
+npx github:AhmadALSaffan/AHMED-SKILLS status
+```
+
+المتطلبات:
+
+- Node.js إصدار 18 أو أحدث
+- npm أو npx
+- Claude Code مثبت على جهازك
+- اتصال إنترنت لتنزيل هذا المستودع من GitHub
+
+بعد التثبيت، أعد تشغيل Claude Code ثم اكتب:
+
+```text
+/ahmed-skill init
+```
+
+## أوامر Claude Code
+
+الـ skill المرفقة `ahmed-skill` تعطيك workflow منظم داخل Claude Code:
+
+```text
+/ahmed-skill init
+/ahmed-skill design
+/ahmed-skill feature
+/ahmed-skill review
+/ahmed-skill readme
+/ahmed-skill status
+```
+
+| الأمر | وظيفته |
+|---|---|
+| `/ahmed-skill init` | يفحص المشروع، يجمع المعلومات الناقصة، يحدد اتجاه التصميم، ويجهز تعليمات المشروع وخطة المعمارية. |
+| `/ahmed-skill design` | يحدد اتجاه UI وUX خاص بالمنتج قبل تنفيذ واجهة نهائية. |
+| `/ahmed-skill feature` | يحوّل طلب feature إلى متطلبات، حالات طرفية، معايير قبول، خطة تنفيذ، وخطة اختبار. |
+| `/ahmed-skill review` | يراجع الكود أو الـ diff من ناحية الصحة، المعمارية، الأمان، الاختبارات، accessibility، الأداء، وقابلية الصيانة. |
+| `/ahmed-skill readme` | ينشئ أو يحدّث README حقيقي بعد فحص المشروع، مع اعتماد ستايل مشاريع Ahmad المرجعية فقط. |
+| `/ahmed-skill status` | يعرض هيكل المشروع، الـ stack، المخاطر، الفحوصات الناقصة، وأفضل الخطوات التالية. |
+
+## هيكل المستودع
+
+```text
+AHMED-SKILLS/
+├── .claude/
+│   └── skills/
+│       └── ahmed-skill/
+│           ├── SKILL.md
+│           └── references/
+│               ├── design-discovery.md
+│               ├── project-init-checklist.md
+│               └── readme-style-guide.md
+│
+├── rules/
+│   ├── 00-ai-operating-rules.md
+│   ├── 01-core-mindset.md
+│   ├── 02-code-quality.md
+│   ├── 03-solid-principles.md
+│   ├── 04-architecture.md
+│   ├── 05-data-modeling.md
+│   ├── 06-api-design.md
+│   ├── 07-error-handling.md
+│   ├── 08-testing-strategy.md
+│   ├── 09-refactoring-technical-debt.md
+│   ├── 10-common-code-smells.md
+│   ├── 11-design-patterns.md
+│   ├── 12-state-management.md
+│   ├── 13-concurrency-async.md
+│   ├── 14-security.md
+│   ├── 15-database-persistence.md
+│   ├── 16-cloud-infrastructure.md
+│   ├── 17-observability.md
+│   ├── 18-performance.md
+│   ├── 19-accessibility-ux.md
+│   ├── 20-version-control.md
+│   ├── 21-code-review.md
+│   ├── 22-ci-cd.md
+│   ├── 23-documentation.md
+│   ├── 24-dependencies-libraries.md
+│   ├── 25-ai-assisted-development.md
+│   └── 26-personal-development-workflow.md
+│
+├── templates/
+│   ├── project-context-template.md
+│   ├── feature-spec-template.md
+│   ├── bug-fix-template.md
+│   ├── ai-task-prompt-template.md
+│   ├── pull-request-template.md
+│   ├── adr-template.md
+│   └── readme-template.md
+│
+├── skills/
+│   ├── android/
+│   │   ├── kotlin.md
+│   │   ├── jetpack-compose.md
+│   │   ├── android-architecture.md
+│   │   ├── android-testing.md
+│   │   └── android-release.md
+│   ├── web/
+│   │   ├── frontend.md
+│   │   ├── backend-api.md
+│   │   ├── nextjs-react.md
+│   │   └── web-deployment.md
+│   ├── ai/
+│   │   ├── claude-code-workflow.md
+│   │   ├── codex-workflow.md
+│   │   └── ai-agent-tasking.md
+│   ├── cloud/
+│   │   ├── docker.md
+│   │   ├── github-actions.md
+│   │   └── deployment.md
+│   └── product/
+│       ├── project-planning.md
+│       ├── landing-page.md
+│       └── app-release.md
+│
+├── bin/
+│   └── ahmed-skills.js
+├── package.json
+├── CLAUDE_GLOBAL_PROFILE.md
+└── CLAUDE_PROJECT_TEMPLATE.md
+```
+
+## كيف يعمل النظام
+
+النظام يستخدم أربع طبقات من السياق:
+
+```text
+طلب Ahmad المباشر
+        ↓
+تعليمات المشروع الحالي و conventions الخاصة به
+        ↓
+Ahmad Skills: rules والمهارات المناسبة والقوالب
+        ↓
+Global Profile والممارسات الهندسية العامة
+```
+
+الـ AI لا يقرأ كل الملفات في كل مهمة. يقرأ فقط المهارات التي تخص نوع المشروع والمهمة. مثال: مهمة Android Compose تحتاج قواعد Android وKotlin وCompose والمعمارية والاختبار والأمان وجودة الكود. مهمة نشر موقع تحتاج قواعد Web وCloud وCI/CD والأمان والتوثيق.
+
+## القواعد
+
+مجلد `rules/` يحتوي على المعايير الهندسية العامة التي يجب على الـ AI اتباعها.
+
+أهم القواعد:
+
+- يفحص المشروع والملفات ذات العلاقة قبل التعديل.
+- ينفذ أصغر تغيير آمن يحقق المطلوب.
+- يحافظ على السلوك الحالي إلا إذا طلبت تغييره بوضوح.
+- يفضل الكود المقروء والقابل للصيانة والاختبار على abstractions المعقدة.
+- يضيف أو يعدل الاختبارات عند تغيير behavior عندما يكون ذلك عمليًا.
+- يشغل formatter وlint وtype checks وtests وbuild المناسبة.
+- لا يكشف أو يرفع secrets أو credentials أو private keys أو بيانات مستخدمين حساسة.
+- يسأل قبل أي تغيير destructive أو production أو deployment أو billing أو permissions أو migration أو breaking change.
+- يراجع الـ diff النهائي ويعطيك نتائج التحقق والافتراضات والقيود والخطوات اليدوية المطلوبة.
+
+## القوالب
+
+مجلد `templates/` يحتوي على ملفات قابلة لإعادة الاستخدام لتنظيم العمل في كل مشروع.
+
+| القالب | استخدامه |
+|---|---|
+| `project-context-template.md` | إنشاء ملف `CLAUDE.md` خاص بالمشروع. |
+| `feature-spec-template.md` | تحديد متطلبات feature والحالات الطرفية ومعايير القبول. |
+| `bug-fix-template.md` | تحليل سبب bug وإصلاحه وإضافة regression test. |
+| `ai-task-prompt-template.md` | إعطاء AI coding agent مهمة واضحة وآمنة. |
+| `pull-request-template.md` | تجهيز Pull Request واضح وسهل المراجعة. |
+| `adr-template.md` | توثيق قرار معماري مهم. |
+| `readme-template.md` | إنشاء README حقيقي ودقيق للمشروع. |
+
+## المهارات
+
+مجلد `skills/` يحتوي تعليمات خاصة بالتقنيات والـ workflows، ويكمل القواعد العامة. يتم تحميل الملفات المناسبة فقط حسب نوع المهمة.
+
+| المجال | المهارات الموجودة |
+|---|---|
+| Android | Kotlin وJetpack Compose ومعمارية Android واختبارات Android وتحضير الإصدارات |
+| Web | Frontend وBackend APIs وNext.js/React ونشر الويب |
+| AI | Claude Code workflow وCodex workflow وإدارة AI coding agents |
+| Cloud | Docker وGitHub Actions وDeployment |
+| Product | تخطيط المنتج وLanding Pages وإدارة إصدار التطبيق |
+
+## إعداد مشروع جديد
+
+عند بدء مشروع جديد، انسخ `CLAUDE_PROJECT_TEMPLATE.md` إلى root المشروع ثم غيّر اسمه إلى:
 
 ```text
 CLAUDE.md
 ```
 
-ثم تعبئ المعلومات الخاصة بالتطبيق أو الموقع، مثل:
+ثم عبئ المعلومات الخاصة بالمشروع:
 
-- ما هو المنتج؟
-- من هم المستخدمون؟
-- ما هي أهم الـ user journeys؟
-- ما هي المتطلبات؟
-- ما هو الـ backend؟
-- ما هو الـ UI framework؟
-- ما هي قرارات التصميم؟
-- كيف يتم الاختبار والبناء؟
-- ما هي القيود الخاصة بالمشروع؟
+- هدف المنتج والمستخدمون المستهدفون.
+- الـ tech stack وأوامر التشغيل.
+- المعمارية وتدفق البيانات.
+- UI واتجاه التصميم.
+- الـ backend والبيانات والـ authentication والتكاملات.
+- متطلبات الاختبار والإصدار.
+- القيود والـ technical debt والأشياء التي لا يجب تغييرها.
 
----
-
-# كيف يعمل النظام؟
-
-عند بدء مشروع جديد، Claude يحصل على سياق من مستويين.
+أو استخدم الأمر:
 
 ```text
-~/.claude/CLAUDE.md
-        │
-        │ القواعد العامة
-        ▼
-project/CLAUDE.md
-        │
-        │ معلومات المشروع
-        ▼
-       Claude
+/ahmed-skill init
 ```
 
-الملف العالمي يحدد **كيف تعمل أنت**، بينما ملف المشروع يحدد **ما هو المشروع الحالي**.
+هذا الـ workflow يفحص المشروع أولًا، ثم يسألك فقط عن المعلومات المهمة الناقصة، وينشئ أو يحدّث ملفات المشروع المناسبة بدون عمل scaffolding عشوائي أو افتراضات غير مؤكدة.
 
-هذا يمنعك من إعادة شرح تفضيلاتك في كل مرة.
+## اتجاه التصميم
 
----
-
-# طريقة بدء مشروع جديد
-
-مثلاً لديك تطبيق Android جديد:
+النظام يفرّق بين استخدام أدوات AI في التطوير وبين الشكل البصري العام الذي يجعل المنتج يبدو كـ AI template مكرر.
 
 ```text
-MyApp/
-├── CLAUDE.md
-├── data/
-├── domain/
-├── presentation/
-├── core/
-└── di/
+AI tools for development
+        = مسموح
+
+Generic AI-looking product design
+        = غير مسموح افتراضيًا
 ```
 
-الخطوات:
+قبل تنفيذ UI لمشروع جديد أو redesign كبير، أمر `/ahmed-skill design` يكتب Design Direction خاص بالمنتج حسب الفكرة، المستخدمين، المنصة، المحتوى، المراجع البصرية، accessibility، وتفضيلاتك.
 
-1. انسخ `CLAUDE_PROJECT_TEMPLATE.md` إلى داخل المشروع.
-2. غيّر اسمه إلى `CLAUDE.md`.
-3. املأ معلومات المنتج والمتطلبات والخدمات والتصميم.
-4. افتح Claude Code داخل المشروع.
-5. دع Claude يفهم المشروع قبل أن يبدأ التنفيذ.
+افتراضيًا، يجب على الـ AI تجنب هذه الأنماط إلا إذا كان هناك سبب حقيقي في المنتج أو طلبتها أنت صراحة:
 
----
+- Gradients البنفسجي والأزرق الافتراضية.
+- Glassmorphism أو blur أو glow أو floating blobs بشكل مبالغ فيه.
+- Hero section عامة فيها badge وزرين وdashboard cards بلا علاقة بالمنتج.
+- Rounded cards متطابقة ومكررة أو dashboard templates جاهزة.
+- Testimonials أو metrics أو logos أو social proof غير حقيقية.
+- صور robots أو brains أو terminals أو circuits أو sparkles لمجرد الإشارة إلى AI.
+- عبارات تسويقية فارغة مثل `The future of` أو `Supercharge your workflow`.
+- Visual noise أو 3D أو animations بلا قيمة حقيقية.
 
-# فلسفة العمل مع Claude
-
-Claude هنا ليس مجرد مولد كود.
-
-الملف العالمي يطلب منه التصرف كـ **Senior Software Engineer / Product Engineer** لديه خبرة عملية قوية، مع التركيز على:
-
-- جودة الإنتاج Production Quality
-- قابلية الصيانة Maintainability
-- الأمان Security
-- الاختبارات Testing
-- تجربة المستخدم UX
-- جودة التصميم UI
-- الأداء Performance
-- البساطة وعدم التعقيد غير الضروري
-
-الهدف هو ألا يقوم Claude بتنفيذ الطلب حرفياً بطريقة سريعة فقط، بل يفهم السبب وراء الميزة ويختار حلاً مناسباً للمشروع.
-
----
-
-# قبل أن يبدأ Claude بالبرمجة
-
-القاعدة الأساسية هي:
-
-> **افهم المشروع أولاً، ثم ناقش التصميم، ثم نفّذ.**
-
-عند بداية مشروع أو Feature كبيرة، يتأكد Claude من فهم:
-
-- فكرة المنتج والمشكلة التي يحلها.
-- المستخدمين المستهدفين.
-- أهم الـ user journeys.
-- المتطلبات الوظيفية وغير الوظيفية.
-- البيانات والتكاملات الخارجية.
-- Authentication وAuthorization.
-- Security وPrivacy.
-- Offline/Online behavior.
-- قيود المنصة والأداء.
-- بنية المشروع الحالية.
-- المكتبات والـ dependencies الموجودة.
-
-بعد ذلك يناقش معك **اتجاه التصميم**.
-
-لا يفترض Claude شكلاً بصرياً من تلقاء نفسه لمجرد أن المشروع يحتاج UI.
-
----
-
-# قواعد التصميم
-
-هذه من أهم أجزاء الـ Global Profile.
-
-التصميم يجب أن ينبني على:
+عملية التصميم المطلوبة:
 
 ```text
 Product
    ↓
-Users
+Target users
    ↓
-User Journeys
+User journeys
    ↓
-Information Architecture
+Information architecture
    ↓
-Design System
+Design direction and system
    ↓
-UI
+UI implementation
 ```
 
-وليس:
+## إعدادات Android الافتراضية
 
-```text
-"اصنع شيئاً يبدو AI"
-```
-
-## أشياء ممنوعة افتراضياً
-
-Claude لا يستخدم في التصميم، إلا إذا طلبت ذلك صراحة:
-
-- تصميمات AI-looking العامة.
-- Gradients المبالغ فيها.
-- Neon palettes.
-- Glow effects.
-- Glassmorphism.
-- Floating blobs.
-- زخارف عشوائية بلا وظيفة.
-- كثرة الـ rounded cards.
-- Card grids غير الضرورية.
-- Bento layouts عشوائية.
-- Dashboard templates جاهزة بلا سبب.
-- عناصر 3D زخرفية غير مفيدة.
-- Holographic / futuristic styling.
-- AI sparkles.
-- Robot / brain / circuit motifs لمجرد الإشارة إلى AI.
-- Animations غير الضرورية.
-- Visual noise.
-- صور أو illustrations بمظهر مولد آلياً عندما يكون التصميم الحقيقي أبسط وأفضل.
-- عبارات مثل `Powered by AI` ما لم تكن مطلوبة فعلاً.
-
-## قاعدة مهمة
-
-Claude يفهم المنتج **قبل التصميم**، والتصميم يجب أن يخدم المنتج وليس العكس.
-
-كما يُسمح باستخدام **Impeccable** عندما تكون أداة التصميم متوفرة، لكن أي اقتراح منها يجب أن يبقى متوافقاً مع متطلبات المنتج وقواعد هذا الملف.
-
----
-
-# قواعد عدم استخدام AI في التصميم
-
-المقصود هنا ليس منع استخدام أدوات الذكاء الاصطناعي في العمل البرمجي.
-
-المقصود هو منع النمط البصري الشائع الذي يجعل كل التطبيقات تبدو وكأنها منتجات AI.
-
-لذلك:
-
-```text
-AI tools for development
-        = OK
-
-Generic AI-looking product design
-        = NOT OK
-```
-
-وإذا احتاج المنتج نفسه إلى Feature مبنية على AI، فلا توجد مشكلة بوجودها **وظيفياً**؛ المنع هنا متعلق بالـ visual style وليس بمنع تقنيات AI داخل التطبيق.
-
----
-
-# قواعد البرمجة
-
-## Android
-
-مشاريع الجوال تستخدم:
+في مشاريع Android، النظام يفضل غالبًا:
 
 - Kotlin.
-- Clean Architecture.
-- MVVM كخيار افتراضي.
-- Repository Pattern عند الحاجة.
-- Dependency Injection.
-- Hilt كخيار افتراضي عندما لا يكون هناك سبب لاستخدام إطار آخر.
-- Coroutines.
-- Flow.
-- تصميم قابل للاختبار.
+- Jetpack Compose أو XML حسب المشروع الحالي وتكلفة الـ migration.
+- MVVM عندما يكون مناسبًا.
+- Clean Architecture فقط عندما تضيف قيمة حقيقية.
+- Repository Pattern عندما يكون فصل data boundary مفيدًا.
+- Dependency Injection وHilt عندما يكون متوافقًا مع المشروع.
+- Coroutines وFlow.
+- UI state واضحة وحالات Loading وEmpty وError وOffline وSuccess عند الحاجة.
+- Business logic وViewModels قابلة للاختبار.
 
-### Compose أم XML؟
+الـ AI لا يفرض Compose أو XML أو Clean Architecture أو Hilt أو repositories أو use cases أو interfaces إذا لم يكن حجم المشروع أو الكود الموجود يبرر ذلك.
 
-Claude لا يفرض واحداً منهما دائماً.
+## ستايل التوثيق
 
-يختار بين Compose وXML حسب:
+عند العمل على README، يستخدم الـ AI المشاريع التالية كمرجع **لأسلوب العرض فقط**:
 
-- المشروع الحالي.
-- الكود الموجود.
-- consistency.
-- تكلفة migration.
-- متطلبات الـ UI.
+- [Neon-Nior](https://github.com/AhmadALSaffan/Neon-Nior)
+- [BANK-AL-DEIR](https://github.com/AhmadALSaffan/BANK-AL-DEIR)
 
----
+المطلوب منه أن يقتبس الجودة العامة، التركيز على المنتج، ترتيب Markdown، الوضوح، والتقديم البصري عندما يناسب المشروع. ممنوع نسخ أسماء المشاريع، الصور، الكود، الأوامر، التقنيات، الروابط، المزايا، بيانات الكاتب، أو الادعاءات من هذه المشاريع إلى مشروع آخر.
 
-# المعمارية
+كل محتوى README يجب أن يكون مثبتًا من المشروع الحالي. لا يسمح للـ AI باختراع features أو أوامر setup أو dependencies أو environment variables أو API endpoints أو screenshots أو deployment URLs أو badges أو licenses أو performance claims.
 
-الهيكل الأساسي المفضل لمشاريع Android هو:
+## قواعد التواصل
 
-```text
-data/
-domain/
-presentation/
-core/
-di/
-```
+اللغة الافتراضية للكود والتعليقات والتوثيق واقتراحات الـ commits والشرح التقني وUI text هي **English**، إلا إذا طلبت لغة مختلفة أو كان المنتج يحتاج لغة أخرى.
 
-### `data/`
-
-يحتوي على تفاصيل البيانات مثل:
-
-- Remote data sources.
-- Local data sources.
-- DTOs.
-- Database entities.
-- Repository implementations.
-
-### `domain/`
-
-يحتوي على منطق العمل:
-
-- Business models.
-- Use cases.
-- Repository contracts.
-- Business rules.
-
-### `presentation/`
-
-يحتوي على:
-
-- Screens.
-- ViewModels.
-- UI state.
-- UI events.
-- Presentation navigation logic.
-
-### `core/`
-
-للعناصر المشتركة، مثل:
-
-- Utilities.
-- Common networking/database infrastructure.
-- Shared primitives.
-- Result/Error handling.
-
-### `di/`
-
-يحتوي على:
-
-- Dependency injection modules.
-- Dependency wiring.
-
-لا يتم إنشاء طبقات إضافية لمجرد زيادة عدد المجلدات. التعقيد يضاف عندما يكون له سبب حقيقي.
-
----
-
-# قواعد جودة الكود
-
-Claude مطالب بالتعامل مع الكود على أنه Production Code وليس Demo Code.
-
-من أهم القواعد:
-
-- Single Responsibility.
-- Composition over inheritance عندما تكون مناسبة.
-- عدم التكرار في منطق الأعمال.
-- عدم وضع Business Logic داخل الـ UI عندما يجب أن تكون في ViewModel أو Domain.
-- عدم ربط Domain بتفاصيل الشبكة أو قاعدة البيانات.
-- تجنب God Classes.
-- تجنب ViewModels العملاقة.
-- تجنب Composables ضخمة.
-- تجنب ملفات Utility ضخمة.
-- أسماء واضحة بدلاً من الاعتماد على التعليقات لشرح كود سيئ التسمية.
-- التعليقات فقط عند الحاجة لشرح Intent أو Constraint أو Trade-off غير واضح.
-- إزالة dead code وunused imports.
-- عدم إضافة TODO بلا سبب حقيقي.
-- عدم hardcode للأسرار أو API keys أو tokens.
-- معالجة الأخطاء بشكل واضح.
-- الاهتمام بـ Loading / Empty / Error / Success states عند الحاجة.
-- عدم إنشاء abstraction لمجرد إنشاء abstraction.
-- عدم إضافة dependency جديدة إذا كان المشروع يحتوي بالفعل على حل مناسب.
-
----
-
-# Security
-
-الأمان ليس مرحلة لاحقة.
-
-القواعد تشمل:
-
-- عدم رفع secrets إلى Git.
-- عدم وضع private keys أو tokens داخل source code.
-- استخدام configuration/environment injection للأسرار.
-- تطبيق Least Privilege.
-- التحقق من المدخلات عند حدود النظام.
-- عدم تعطيل Authentication أو Authorization لتسهيل التنفيذ.
-- عدم إضعاف Firebase Security Rules حتى تعمل Feature بسرعة.
-
----
-
-# Firebase
-
-Firebase هو الخيار المفضل عندما يحتاج المشروع إلى خدماته.
-
-يمكن استخدام:
-
-- Firebase Authentication.
-- Cloud Firestore.
-- Firebase Storage.
-- Firebase Cloud Messaging (FCM).
-- Firebase Security Rules.
-- Crash/Analytics عندما تكون مطلوبة فعلاً.
-
-لا يعني ذلك استخدام جميع الخدمات في كل مشروع؛ يتم اختيار الخدمات بناءً على المتطلبات.
-
-### Supabase
-
-Supabase ليس خياراً افتراضياً في هذا الإعداد.
-
-لا يتم إدخاله إلى المشروع إلا إذا طلبته أنت صراحة.
-
----
-
-# Testing
-
-التنفيذ لا يعتبر منتهياً بمجرد أن الكود يـcompile.
-
-Claude يهتم بـ:
-
-- Unit tests لمنطق الأعمال.
-- Repository/Data tests عندما تكون مهمة.
-- ViewModel/state tests.
-- UI/Integration tests للـ user journeys المهمة عندما تكون مناسبة.
-- اختبار الحالات الحرجة وحالات الفشل.
-- تشغيل أضيق اختبار مفيد أولاً، ثم التوسع عند الحاجة.
-
-ولا يسمح لنفسه بتعديل الاختبارات فقط لتجعل implementation الخاطئ يمر.
-
----
-
-# احترام المشروع الحالي
-
-قبل تعديل أي شيء، Claude يجب أن:
-
-1. يقرأ الملفات ذات العلاقة.
-2. يفهم patterns الموجودة.
-3. يعيد استخدام components وabstractions المناسبة.
-4. يحافظ على naming/package conventions.
-5. يقلل التغييرات غير المتعلقة بالمهمة.
-6. لا يعيد كتابة كود يعمل لمجرد أنه يفضل أسلوباً آخر.
-7. لا يضيف Library جديدة بدون سبب واضح.
-8. ينتبه لتأثير upgrades على dependencies والإصدارات.
-
-هذه القاعدة مهمة لمنع ما يسمى:
-
-> "While I'm here, I'll rewrite half the project."
-
----
-
-# طريقة تنفيذ Feature جديدة
-
-Claude يتبع هذا التسلسل:
-
-```text
-1. Understand the request
-        ↓
-2. Inspect the repository
-        ↓
-3. Clarify real unknowns
-        ↓
-4. Define behavior + edge cases
-        ↓
-5. Define technical approach
-        ↓
-6. Discuss design
-        ↓
-7. Implement incrementally
-        ↓
-8. Verify
-        ↓
-9. Finish with DONE
-```
-
-ولا يبدأ بالتصميم قبل فهم الـ feature والـ product.
-
----
-
-# Git
-
-Git history والـ remote operations ملك لك.
-
-Claude يستطيع قراءة:
-
-- `git status`
-- `git diff`
-- `git log`
-- branches
-- الملفات
-
-لكن ممنوع عليه افتراضياً:
-
-```text
-commit
-push
-force-push
-merge
-branch deletion
-history rewriting
-```
-
-أنت من يقوم بالـ commit والـ push.
-
-## طريقة إنهاء الخطوة
-
-بعد إنهاء خطوة مهمة، الرد المطلوب يكون:
-
-```text
-DONE
-Suggested commit: feat(auth): add email authentication flow
-```
-
-أي أن Claude يوضح أن الخطوة انتهت ويقترح لك رسالة commit، لكنه لا ينفذ commit بنفسه.
-
----
-
-# اللغة
-
-اللغة الافتراضية لكل شيء هي **English**:
-
-- Conversation.
-- Code.
-- Comments.
-- Documentation.
-- Commit suggestions.
-- Technical explanations.
-- UI text عندما لا يتم طلب لغة أخرى.
-
-يمكنك طلب العربية أو أي لغة أخرى داخل المنتج، وعندها ينفذ Claude الطلب كما هو.
-
----
-
-# قواعد التواصل
-
-## Emojis
-
-**لا توجد Emojis نهائياً بشكل افتراضي.**
-
-هذا ينطبق على:
+الـ Emojis معطلة افتراضيًا في:
 
 ```text
 Conversation
@@ -538,138 +331,42 @@ Design mockups
 Commit suggestions
 ```
 
-الاستثناء الوحيد:
+تُستخدم Emojis فقط عندما تطلبها أنت بشكل صريح.
 
-> إذا طلبت أنت استخدام Emojis بشكل صريح.
+## قواعد Git
 
----
-
-# كيف تستخدم الملف العالمي؟
-
-بعد تنزيل `CLAUDE_GLOBAL_PROFILE.md`، غيّر اسمه إلى:
+يسمح للـ AI بفحص حالة المشروع باستخدام أوامر مثل:
 
 ```text
-CLAUDE.md
+git status
+git diff
+git log
+git branch
 ```
 
-ثم ضعه هنا:
+لكن افتراضيًا ممنوع عليه تنفيذ هذه العمليات دون موافقة واضحة منك:
 
 ```text
-C:\Users\AHMED AL SAFFAN\.claude\CLAUDE.md
+git commit
+git push
+git pull --rebase
+git merge
+git rebase
+git reset
+git clean
+git branch -D
+git push --force
 ```
 
-أصبح هذا الملف قاعدة عامة لجميع مشاريع Claude Code التي تعمل من حساب Windows نفسه.
-
----
-
-# كيف تستخدم قالب المشروع؟
-
-عند إنشاء مشروع جديد:
+بعد إنهاء مهمة مهمة، يجب أن يكتب أن المهمة انتهت، ويقترح رسالة commit بدون أن ينفذها:
 
 ```text
-cp CLAUDE_PROJECT_TEMPLATE.md MyProject/CLAUDE.md
+DONE
+Suggested commit: feat(auth): add email authentication flow
 ```
 
-على Windows يمكنك ببساطة نسخ الملف وإعادة تسميته يدوياً.
+## الفلسفة
 
-ثم املأ الأقسام:
+> افهم أولًا. صمّم عن قصد. ابنِ باحتراف. تحقق من كل شيء. لا تعمل commit إلا عندما يطلب Ahmad ذلك.
 
-```text
-Project Overview
-Requirements
-Architecture
-Design Direction
-Backend and Services
-Testing
-Build and Run
-Important Project Constraints
-Known Decisions
-Project-Specific Overrides
-```
-
----
-
-# Project-Specific Overrides
-
-هناك فرق مهم بين القواعد العامة وقواعد المشروع.
-
-مثلاً:
-
-```text
-Global:
-MVVM + Clean Architecture
-
-Project:
-This legacy project must remain in MVP.
-```
-
-في هذه الحالة Claude يتبع قرار المشروع لأنه متعمد ومحدد للمشروع.
-
-ترتيب الأولوية هو:
-
-```text
-1. Your current explicit request
-2. Project-specific instructions
-3. Global profile
-4. Existing repository conventions
-5. General engineering preferences
-```
-
----
-
-# مثال عملي
-
-بدلاً من أن تقول في كل مرة:
-
-> استخدم Kotlin، MVVM، Clean Architecture، لا تستخدم emojis، لا تعمل commit، لا تعمل تصميم AI، اسألني عن المشروع أولاً، واستخدم Firebase...
-
-يكفي أن تقول مثلاً:
-
-```text
-Build the authentication flow.
-```
-
-Claude سيأخذ القواعد العامة من `~/.claude/CLAUDE.md`، ثم يقرأ `CLAUDE.md` الخاص بالمشروع، ثم يتعامل مع المهمة ضمن هذه القواعد.
-
----
-
-# فلسفة مختصرة
-
-هذا الإعداد يمكن تلخيصه بهذه الجملة:
-
-> **Understand first. Design intentionally. Build professionally. Verify everything. Commit nothing unless Ahmad does it.**
-
----
-
-# الملفات المقترحة للمستودع
-
-```text
-.
-├── README.md
-├── CLAUDE_GLOBAL_PROFILE.md
-└── CLAUDE_PROJECT_TEMPLATE.md
-```
-
-ولا يلزم رفع `~/.claude/CLAUDE.md` نفسه كنسخة مختلفة؛ الملف العالمي الموجود على جهازك يمكن أن يكون هو نسخة `CLAUDE_GLOBAL_PROFILE.md` بعد إعادة تسميتها، بينما قالب المشروع يبقى منفصلاً.
-
----
-
-# ملاحظة مهمة
-
-`CLAUDE.md` هو نظام تعليمات وسياق لـ Claude Code، وليس بديلاً عن صلاحيات النظام أو Git hooks أو أدوات الحماية التقنية.
-
-لذلك قواعد مثل منع `commit` و`push` هنا هي قواعد سلوكية. ولمنعها تقنياً بدرجة أقوى، يمكن إضافة إعدادات Permissions/Hooks في Claude Code.
-
----
-
-## ملفات الإعداد
-
-| الملف | الاستخدام |
-|---|---|
-| [`CLAUDE_GLOBAL_PROFILE.md`](./CLAUDE_GLOBAL_PROFILE.md) | الملف الشخصي العام |
-| [`CLAUDE_PROJECT_TEMPLATE.md`](./CLAUDE_PROJECT_TEMPLATE.md) | قالب لكل مشروع |
-| `README.md` | شرح النظام وطريقة استخدامه |
-
----
-
-**Built for Ahmad's development workflow.**
+Built for Ahmad's development workflow.
